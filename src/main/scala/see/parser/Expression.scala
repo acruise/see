@@ -4,13 +4,8 @@
 
 package see.parser
 
-import see.Binary
-import see.ParseException
-import see.Relator
-import see.Scope
-import see.Unary
+import see.{Binary, ParseException, Relator, Scope, Unary}
 import see.nodes._
-import see.values._
 import see.operations._
 
 private[see] object Expressions {
@@ -143,8 +138,8 @@ private[see] object Expressions {
 
 private[see] class Expressions extends Literals {
 
-	import Literals._
-	import Expressions._
+	import see.parser.Expressions._
+	import see.parser.Literals._
 
 	type NP = Parser[Node]
 

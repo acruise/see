@@ -4,7 +4,6 @@
 package see
 
 import org.junit._
-import org.junit.Assert._
 
 /** Tests BigInteger/Decimal operations.
  */
@@ -98,7 +97,7 @@ class BigTest extends TestCase {
 		expect(""" 10L**20 """, BI("100000000000000000000"))
 		expect(""" 10L** -2 """, BR("0.01"))
 		// goes through BigReal, but should be accurate enough for this case
-		expect(""" 4L**0.5 """, BI("2"))
+		expect(""" 4L**0.5 """, BR("2.0"))
 
 		// whole numbers should be reduced to BigInt
 		expect(""" 10.L**0 """, BI("1"))

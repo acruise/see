@@ -3,11 +3,9 @@
 
 package see
 
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
 import org.junit.Assert._
-import values._
+import org.junit.{After, Before}
+import see.values._
 
 /** Superclass for all see test cases.
  */

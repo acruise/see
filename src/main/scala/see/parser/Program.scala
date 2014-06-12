@@ -6,11 +6,10 @@ package see.parser
 
 import see.SyntaxError
 import see.nodes._
-import see.values._
 import see.operations._
 
 private object Program {
-	import Expressions._
+	import see.parser.Expressions._
 
 	val SSEP0 = ";?[;\\s]*".r // optional ampersand
 	val SSEP1 = ";[;\\s]*".r  // required ampersand
@@ -58,8 +57,7 @@ private object Program {
 
 private[see] class Program extends Expressions {
 
-	import Literals._
-	import Program._
+	import see.parser.Program._
 
 	override def all: Parser[Node] = statements
 
