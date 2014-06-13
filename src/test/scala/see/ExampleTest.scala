@@ -4,30 +4,29 @@
 package see
 
 import org.junit._
-import org.junit.Assert._
 
 /** Tests examples from documentation.
- */
+  */
 
 //@Ignore
 class ExampleTest extends TestCase {
 
-	@Test
-	def testObfuscated() {
-		println("Obfuscated")
-		val prog = """
+  @Test
+  def testObfuscated() {
+    println("Obfuscated")
+    val prog = """
 	and = 1;
 	xor = 2;
 	or = 3;
 	if = and or xor xor and or not or and and or xor;
-"""
-		expect(prog, 3)
-	}
+               """
+    expect(prog, 3)
+  }
 
-	@Test
-	def testPatternSample() {
-		println("Pattern Sample")
-		val prog = """
+  @Test
+  def testPatternSample() {
+    println("Pattern Sample")
+    val prog = """
 pred(x) := { 10 < x < 100 };
 a = 101;
 x = 20;
@@ -39,15 +38,15 @@ y = x ?~   "abc"  -> 0x41L :
            pred   -> 2 * $:
            Number -> bigint($) :
            ?      -> 0L ; // note semicolon after last alternative!
-		   """
+               		   """
 
-		expect(prog, 40)
-	}
+    expect(prog, 40)
+  }
 
-	@Test
-	def testReturnSample() {
-		println("Return Sample")
-		val prog = """
+  @Test
+  def testReturnSample() {
+    println("Return Sample")
+    val prog = """
 		x = -1;
 		y = {
 			x <= 0 ?= 0;
@@ -55,15 +54,15 @@ y = x ?~   "abc"  -> 0x41L :
 		};             // will end up here
 		10 * y;
 		// not here!
-	   """
-		expect(prog, 0)
-	}
+               	   """
+    expect(prog, 0)
+  }
 
 
-	@Test
-	def testAssertSample() {
-		println("Assert Sample")
-		val prog = """
+  @Test
+  def testAssertSample() {
+    println("Assert Sample")
+    val prog = """
 		x = 0;
 		{
 			y = 10 * {
@@ -74,8 +73,8 @@ y = x ?~   "abc"  -> 0x41L :
 		}!               // error catched here
         0            // result returned in case of error
 		}
-	   """
-		expect(prog, 0)
-	}
+               	   """
+    expect(prog, 0)
+  }
 
 }
